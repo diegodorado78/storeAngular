@@ -1,0 +1,39 @@
+
+    Para verificar versión de Node JS: node -v
+    Para verificar versión de NPM: npm -v
+    Para verificar versión de Angular: ng version
+    Para instalar Angular Framework:
+    npm i -g @angular/cli
+    npm install -g @angular/cli (-g de manera global) Para ver lista de comandos: ng
+    Para crear un nuevo proyecto: ng new projectName
+    Para correr la aplicación: ng Serve
+    version de angular cli ng--version
+    serve custon ng serve --port4600
+    Directivas en HTML
+    //declaro la directiva en html con un nombre y las llamo en la logica con ese nombre
+    ngModel--> para  data binding y forms
+    //two ways data binding->
+     vista modelo[(ngModel)]=“nombre”
+    //one data binding -> solo vista[ngModel]=“apellido”
+    pipes: modificar contenido de un template
+    ng g pipe exponential --> |uppercase
+   directiva: modificar un elemnto del dom en especifico
+   // crea directiva.ts y spect
+   ng g d highlight
+   //crear servicios para proveer info
+   ng g s products
+   //crear interface
+   ng generate interface pieChart
+   // crear modulo
+   ng g m shared
+//agregar angular material al proyecto
+ng add @angular/material
+//creo modulo compartido de material
+ng g m material
+//actualizar dependencias
+npm audit fix
+actualizar angular cli
+ng update @angular/core @angular/cli
+ng update
+//crear guardian
+ng g g admin

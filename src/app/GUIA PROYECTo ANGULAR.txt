@@ -1,0 +1,27 @@
+GUIA PROYECTO Angular
+1. crear proyecto
+2. instalar material: ng add @angular/material
+3.instalar swiper: npm instalar swiper --save (opcional)
+4. crear los modulos shared y core que comparten elementos y datos
+   crear al archivo de servicios(datos y metodos para acceder)
+   en core/services/products : ng g s products
+5. crear el modulo material que va a guardar los componentes que voy a usar
+6. crear los demas modulos del proyecto home,product,contact,demo
+7. crear los componentes dentro de los modulos: ng g c product/components/productDetail
+8. crear las Directivas y pipes dentro del modulo shared:
+   ng g pipe shared/pipes/exponential
+   ng g d shared/directives/highlight
+9. crear componentes header y footer dentro de shared/components
+   ng g c shared/components/header
+   ng g c shared/components/footer
+10. crear componente layout en el root, es decir sin modulo un layout
+11. crear guardian para habilitar rutas: ng g g admin -> canActive
+12. configuro rutas en el app.routing (que me lleven a cada modulo)
+    import del Layout component y del guardian
+    import de PreloadAllModules
+13. creo el routing.module.ts y configuro las rutas de cada modulo
+    importante incluir el archivo de routing en el .module.ts
+14. crear el modelo de datos product.model.ts en el app root
+15. instalo swiper si quiero y agrego las dependencias al angular.json
+             "styles":  "./node_modules/swiper/swiper.min.css"
+       agrego el html necesario en el componente banner para crerlo

@@ -1,0 +1,11 @@
+<div>
+ <!-- aqui tengo la varibale  publica disponible product -->
+<img [src]="product.image" width="250px" alt="">
+</div>
+<div>
+ <ul>
+  <li>Nombre: {{product.title}}</li>
+   <li>Precio: {{product.price |currency}}</li>
+    <p> {{product.description}}</p>
+ </ul>
+</div>

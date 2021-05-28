@@ -1,0 +1,32 @@
+<h1>Ingrese el nombre del usuario</h1>
+<input type="text" [(ngModel)]="title"><br>
+<input type="text" [(ngModel)]="numero" >
+<p> el numero elevado al cuadrado es{{numero|exponential}}</p>
+
+<button (click)="addNames(title)">enviar</button>
+<!-- puedo hacer interpolation directamente -->
+<h1>{{title}}</h1>
+<!-- // *ngiF evalua si la condicion se evalua true, si es asi muestra el div -->
+<div *ngIf="title === 'diego' ">
+  <h3> este es {{title}}</h3>
+</div>
+<div *ngIf="title === 'julian' ">
+  <h3> este es {{title}}</h3>
+</div>
+<div *ngIf="title === 'alirio' ">
+  <h3> este es {{title}}</h3>
+</div>
+<div [ngSwitch]="title">
+  <p *ngSwitchCase="'camilo'"> este es {{title}}</p>
+    <p *ngSwitchCase="'raul'"> este es {{title}}</p>
+  <p *ngSwitchCase="'rolando'"> este es {{title}}</p>
+<p *ngSwitchDefault> No hay match</p>
+</div>
+<ul>
+  <li *ngIf="names.length==0"> <h1> Se han eliminado todos los elementos de la lista</h1></li>
+  <!-- //declaro la directiva y la variable temporal del array names -->
+  <li *ngFor="let x of names;index as i">
+     {{i}} mi nombre es {{x}}
+     <button (click)="deleteItem(i)">borrar</button>
+  </li>
+</ul>

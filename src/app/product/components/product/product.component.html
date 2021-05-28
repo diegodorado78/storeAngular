@@ -1,0 +1,13 @@
+
+<!-- <app-product>  envuelve como un div mi componente-->
+    <!-- highlight es la custom directive para resaltar el bg del elemento -->
+<h3 appHighlight > {{product.title |uppercase}}</h3>
+    <img  [src]="product.image"alt="">
+    <p>{{product.description |slice:0:20}}</p>
+    <p>{{today|date:'medium'}}</p>
+    <p><strong> precio:</strong> {{product.price|currency}}</p>
+<button mat-button color="primary" type="button" (click)="addCart()"> add to cart</button><br>
+<!-- paso un array para formar una url de forma correcta -->
+<!-- primer parte el path y segundo e del array la id para que concatene correctamente -->
+<a  [routerLink]="['/products/',product.id]"> ver detalle</a>
+<!-- mat-button es el boton de material que importo con su color -->

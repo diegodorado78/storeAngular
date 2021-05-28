@@ -1,0 +1,12 @@
+<div class="product__grid">
+  <!-- evito que cree un div por cada producto -->
+  <app-product *ngFor="let product of products"
+  (ProductClicked)="clickProduct($event)"[product]="product">
+</app-product>
+<!-- [product] es una variable individual que usa el comp app-product -->
+  <!-- <h3> {{product.title}}</h3>
+  <img  width="250px"src={{product.image}} alt="">
+    <img width="250px"[src]="product.image"alt="">
+    <p>precio:  {{product.price}}</p> -->
+
+</div>
