@@ -1,12 +1,22 @@
-:host{ //ref al tag app-product que es el compomente porducto q se repite
-background-color:#243447 ;
-color:white;
- max-width: 25rem;
-border: 1px solid #cccc;
-border-radius: 5px;
-margin: 5px;
+// :host{ //ref al tag app-product que es el compomente porducto q se repite
+// background-color:#243447 ;
+// color:white;
+//  max-width: 25rem;
+// border: 1px solid #cccc;
+// border-radius: 5px;
+// margin: 5px;
+// }
+
+.crop-image{
+display: block;
+  height: 300px;
+  width: 100%;
+
+  img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    object-position: center;
+  }
 }
 
-img{
- max-width: 100%;
-}

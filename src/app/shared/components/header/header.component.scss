@@ -6,3 +6,11 @@ nav > a{
 nav>a.active{
  background-color: #cccc;
 }
+.header-row{
+ width: 100%;
+}
+ .cart{
+ display:flex;
+flex-direction: row;
+justify-content: space-between;
+}

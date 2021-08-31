@@ -1,6 +1,16 @@
-<nav>
-  <a routerLink="/home" routerLinkActive="active">Home </a>
- <a routerLink="/products"routerLinkActive="active">Productos </a>
- <a routerLink="/contact"routerLinkActive="active">contacto</a>
-
+<mat-toolbar >
+ <mat-toolbar-row>
+  <!-- el cart es la clase que me permite mover el carrito a la derecha -->
+  <div class="row between middle-xs header-row cart">
+  <nav>
+  <a mat-button routerLink="/home" routerLinkActive="active">HOME </a>
+ <a mat-button routerLink="/products"routerLinkActive="active">PRODUCTOS </a>
+ <a mat-button routerLink="/contact"routerLinkActive="active">CONTACTO</a>
 </nav>
+ <a mat-raised-button matBadge="1" matBadgeColor="warn">
+<mat-icon> shopping_cart </mat-icon>
+Carrito
+ </a>
+ </div>
+</mat-toolbar-row>
+</mat-toolbar>

@@ -25,3 +25,29 @@ GUIA PROYECTO Angular
 15. instalo swiper si quiero y agrego las dependencias al angular.json
              "styles":  "./node_modules/swiper/swiper.min.css"
        agrego el html necesario en el componente banner para crerlo
+16. si aparece error al importar material en el module, reescribo la ruta
+17. instalamos flexboxgrid para usar grid basado en flexbox en angular
+    npm i flexboxgrid --save
+18 agregamos la dependencia al angular.json en styles
+   "styles" : "./node_modules/flexboxgrid/dist/flexboxgrid.min.css",
+19. creo modulo y routing del modulo con: ng g m admin --routing
+10. instalar schematics con :ng add @angular/cdk
+21. crear el componente form ng generate @angular/material:address-form admin/components/product-form
+22. paso los modulos que importa schematic en admin a material
+23.importo el material module en el admin module
+24. convertir la app en una PWA: ng add @angular/pwa
+25. add package.json: "prod": "ng build --prod"
+26. npm run prod
+27. npm install -g angular-http-server
+28. cd dist/pwa-
+29. angular-http-server
+30. crear imagen docker: docker build -t charts .
+31. mirar las imagenes creadas: docker ps -a
+32. correr imagen: docker run -d -it -p 80:80 charts
+33. ver la imagen: http://192.168.18.4/home
+34. trabajar peticiones http
+crear un objeto de tipo HttpClient:   constructor( private http: HttpClient ) {}
+35.implementacion en service //variable entorno definida en environment.ts
+getAllProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(`${environment.url_api}/products`);
+  }

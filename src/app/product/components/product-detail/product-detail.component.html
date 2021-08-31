@@ -1,5 +1,7 @@
+<!-- se renderiza sii product existe -->
+<div *ngIf="product">
 <div>
- <!-- aqui tengo la varibale  publica disponible product -->
+ <!-- aqui tengo la variable  publica disponible product -->
 <img [src]="product.image" width="250px" alt="">
 </div>
 <div>
@@ -8,4 +10,9 @@
    <li>Precio: {{product.price |currency}}</li>
     <p> {{product.description}}</p>
  </ul>
+ <button (click)="createProduct()">crear</button>
+  <button (click)="updateProduct()">editar</button>
+  <button (click)="deleteProduct()">borrar</button>
+
+</div>
 </div>

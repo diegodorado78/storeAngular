@@ -1,13 +1,27 @@
+<mat-card>
+    <mat-card-header>
+<mat-card-title> {{product.title |uppercase}}</mat-card-title>
+    <mat-card-subtitle>{{product.price|currency}}</mat-card-subtitle>
+ </mat-card-header>
+ <div class="crop-image">
+     <img  [src]="product.image"alt="">
+ </div>
+ <mat-card-content>
+    <p>{{product.description |slice:0:20}}</p>
+ </mat-card-content>
+ <mat-card-actions>
+<a mat-button [routerLink]="['/products/',product.id]"> ver detalle</a>
+<button mat-raised-button color="primary" type="button" (click)="addCart()"> add to cart</button><br>
+
+ </mat-card-actions>
+</mat-card>
+
 
 <!-- <app-product>  envuelve como un div mi componente-->
     <!-- highlight es la custom directive para resaltar el bg del elemento -->
-<h3 appHighlight > {{product.title |uppercase}}</h3>
-    <img  [src]="product.image"alt="">
-    <p>{{product.description |slice:0:20}}</p>
+<!-- <h3 appHighlight > </h3>
     <p>{{today|date:'medium'}}</p>
-    <p><strong> precio:</strong> {{product.price|currency}}</p>
-<button mat-button color="primary" type="button" (click)="addCart()"> add to cart</button><br>
+    <p><strong> precio:</strong> </p> -->
 <!-- paso un array para formar una url de forma correcta -->
 <!-- primer parte el path y segundo e del array la id para que concatene correctamente -->
-<a  [routerLink]="['/products/',product.id]"> ver detalle</a>
 <!-- mat-button es el boton de material que importo con su color -->

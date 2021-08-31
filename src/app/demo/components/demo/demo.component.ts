@@ -16,7 +16,7 @@ export class DemoComponent implements OnInit {
     this.names.push(title);
   }
   deleteItem(index: number){
-    this.names.splice(index, 1); // slipce para borrar un elemento a partir de la posicion que indico
+    this.names.splice(index, 1); // splice para borrar un elemento a partir de la posicion que indico
     // si pongo otro parametro seria algo que agrega en lugar del que borro
   }
   ngOnInit(): void {
