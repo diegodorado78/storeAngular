@@ -10,6 +10,10 @@ import {MatCardModule} from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
+ import {MatTableModule} from '@angular/material/table';
+ import { LayoutModule } from '@angular/cdk/layout';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [],
@@ -22,17 +26,31 @@ import { MatRadioModule } from '@angular/material/radio';
     MatCardModule,
     MatInputModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    MatTableModule,
+    LayoutModule,
+   MatToolbarModule,
+   MatButtonModule,
+   MatSidenavModule,
+   MatIconModule,
+   MatListModule,
   ],
   exports:[
-    MatButtonModule,
+   MatButtonModule,
     MatToolbarModule,
     MatIconModule,
     MatBadgeModule,
     MatCardModule,
     MatInputModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    MatTableModule,
+    LayoutModule,
+   MatToolbarModule,
+   MatButtonModule,
+   MatSidenavModule,
+   MatIconModule,
+   MatListModule,
 
   ]
 
