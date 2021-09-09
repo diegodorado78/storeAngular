@@ -35,7 +35,13 @@
       <div class="col-xs-12 col-md-4">
         <div class="box">
           <h3>Contacto</h3>
-
+          <mat-form-field>
+     <input  matInput type="email" [formControl]="emailField" style="color:black;" placeholder="digite su correo">
+     <!-- si el campo cumple con los validores se muestra el boton -->
+          </mat-form-field>
+          <!-- estilos material para input y button y att disabled si se incumple la validacion -->
+     <button  mat-raised-button [disabled]="emailField.invalid" (click)="sendMail()"> send </button>
+     <!-- <p *ngIf="emailField.invalid" > El campo no es valido</p> -->
         </div>
       </div>
     </div>

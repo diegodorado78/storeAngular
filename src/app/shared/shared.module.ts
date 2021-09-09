@@ -21,7 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ExponentialPipe,
     HighlightDirective,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ReactiveFormsModule
   ],
   imports: [
     CommonModule,

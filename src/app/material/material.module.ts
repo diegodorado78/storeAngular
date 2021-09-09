@@ -1,3 +1,4 @@
+import { MatFormField } from '@angular/material/form-field';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
  // en este modulo insertamos lo que vayamos a usar de angular y si otro modulo(home) necesita eso
@@ -51,6 +52,7 @@ import { MatListModule } from '@angular/material/list';
    MatSidenavModule,
    MatIconModule,
    MatListModule,
+   MatFormField
 
   ]
 

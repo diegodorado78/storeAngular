@@ -19,6 +19,7 @@ import { ProductsListComponent } from './components/products-list/products-list.
     ReactiveFormsModule,
    MaterialModule,
 
+
  ]
 })
 export class AdminModule { }
