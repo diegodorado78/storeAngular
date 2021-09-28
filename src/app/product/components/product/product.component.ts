@@ -8,6 +8,8 @@ import {Component,
  from '@angular/core' // OnChanges, SimpleChanges
 // tipo de declaracion que me define (estructura) y elementos de un compomnetne
 import {Product} from '../../../product.model';
+import { CartService } from './../../../core/services/cart.service';
+
 @Component({
  // metadata del decorador aclara donde y como llamar al componente
  selector: 'app-product',
@@ -20,7 +22,9 @@ export class ProductComponent implements DoCheck, OnInit, OnDestroy{ // OnChange
 @Output() productClicked: EventEmitter<any> = new EventEmitter<any>();
 // primer metodo que se ejecuta
 today = new Date();
-constructor(){
+constructor(
+  private cartService:CartService//inserto el serv como inyeccion de dep
+){
   console.log('1.metodo constructor')
  }
  // segundo metodo, detecta estado anterior y nuevo
@@ -43,7 +47,9 @@ ngOnDestroy(){
 // al clicar en button se ejecuta addcart y este emite el evento
 // que a su vez ejecuta clickProduct(id:number) en el componente padre Products
 addCart(){
- console.log('agregado al carrito de compras');
- this.productClicked.emit(this.product.id);
+//  console.log('agregado al carrito de compras');
+//  this.productClicked.emit(this.product.id);
+//le paso el producto que quiero agregar
+ this.cartService.addCart(this.product);
 }
 }

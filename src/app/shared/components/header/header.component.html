@@ -7,7 +7,9 @@
  <a mat-button routerLink="/products"routerLinkActive="active">PRODUCTOS </a>
  <a mat-button routerLink="/contact"routerLinkActive="active">CONTACTO</a>
 </nav>
- <a mat-raised-button matBadge="1" matBadgeColor="warn">
+<!-- FLUJO DE DATO/VAR OBSERVABLE SIGNO $ AL FINAL, uso pipe async -->
+<!-- cuando el elemento no se usa se desuscribe -->
+ <a mat-raised-button [matBadge]="total$|async" matBadgeColor="warn">
 <mat-icon> shopping_cart </mat-icon>
 Carrito
  </a>
