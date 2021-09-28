@@ -1,4 +1,5 @@
 <!-- mat table puede funcionar como una directiva -->
+<a mat-raised-button routerLink="create">Crear nuevo producto</a>
 <table mat-table [dataSource]="products" class="mat-elevation-z8 products__table">
     <!-- Position Column -->
     <!-- matcolumndef hace ref a los nombres del datasource, es case sensitive -->
@@ -20,7 +21,8 @@
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef>Actions </th>
     <td mat-cell *matCellDef="let product" >
-    <button mat-button >Edit</button>
+      <!-- necesito pasar el id como segundo parametro en el endpoint para eso uso el array  -->
+    <a mat-button mat-raised-button [routerLink]="['./edit',product.id]">Edit</a>
     <button mat-button mat-raised-button color="warn" (click)="deleteProduct(product.id)">Delete</button>
     </td>
   </ng-container>

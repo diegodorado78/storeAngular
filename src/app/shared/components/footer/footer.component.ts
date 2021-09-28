@@ -24,7 +24,7 @@ emailField:FormControl;//declaro la var emailField de tipo formControl y me la t
   ngOnInit(): void {
   }
   sendMail(){//metodo que muestra en consola el valor cuando se hace click en enviar
-    if(this.emailField.valid){//valid es un prop de form que verifica auto los validadores que defini
+    if(this.emailField.valid){//valid es un prop de form que verifica los validadores que defini
       console.log(this.emailField.value)
     }
   }
