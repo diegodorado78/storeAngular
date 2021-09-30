@@ -37,3 +37,5 @@ ng update @angular/core @angular/cli
 ng update
 //crear guardian
 ng g g admin
+//crear modulo
+ng g m order --routing

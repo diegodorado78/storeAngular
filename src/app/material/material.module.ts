@@ -16,6 +16,7 @@ import { MatRadioModule } from '@angular/material/radio';
  import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+ import {MatStepperModule} from '@angular/material/stepper';
 @NgModule({
   declarations: [],
   imports: [
@@ -35,7 +36,8 @@ import { MatListModule } from '@angular/material/list';
    MatSidenavModule,
    MatIconModule,
    MatListModule,
-   FormsModule
+   FormsModule,
+   MatStepperModule
   ],
   exports:[
    MatButtonModule,
@@ -53,8 +55,8 @@ import { MatListModule } from '@angular/material/list';
    MatSidenavModule,
    MatIconModule,
    MatListModule,
-   MatFormField
-
+   MatFormField,
+   MatStepperModule
   ]
 
 })

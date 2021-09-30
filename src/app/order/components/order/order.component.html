@@ -1,0 +1,27 @@
+<mat-horizontal-stepper>
+  <mat-step>
+    <ng-template matStepLabel> Sus Productos</ng-template>
+    <!-- CREO UN DIV QUE ME ENCIERRE LA LOGICA PARA HACER UNA SOLA SUSCRIPCION A LA VAR ASYNC -->
+    <!-- SE SUSCRIBE UNA SOLA VEZ Y CREA UNA VAR TEMPORAL products DISPONIBLE PARA OTRAS PETICIONES -->
+    <div *ngIf="(products$|async) as products">
+    <p *ngIf="products.length===0"> No hay productos :(</p>
+    <ul>
+  <!-- recorro el array que se va modificando de manera reactiva -->
+  <li *ngFor="let product of products">
+    {{product.title}}
+  </li>
+</ul>
+    </div>
+    <!-- evaluo la condicion con la var async, para mostar el mensaje -->
+
+  </mat-step>
+   <mat-step>
+    <ng-template matStepLabel> Sus datos personales</ng-template>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum at numquam repudiandae qui dicta quis possimus laudantium consequuntur. Maiores commodi nemo libero ratione, pariatur enim iusto maxime omnis provident impedit!</h1>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel> Pago</ng-template>
+    <h1> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus porro consectetur voluptate voluptatem optio pariatur veritatis asperiores, libero voluptas nam, magnam saepe sint officia aliquid dignissimos eum placeat dicta vel.</h1>
+  </mat-step>
+</mat-horizontal-stepper>
+

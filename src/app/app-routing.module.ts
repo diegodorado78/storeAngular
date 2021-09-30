@@ -32,6 +32,10 @@ const routes: Routes = [
         canActivate: [AdminGuard],
         loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule)
       },
+       {
+        path:'order',
+        loadChildren: () => import('./order/order.module').then(m => m.OrderModule)
+      },
     ]
   },
   {
@@ -39,6 +43,7 @@ const routes: Routes = [
         loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
 
   },
+
   {
     path: '**',
     loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
