@@ -1,9 +1,11 @@
+import { AngularFireStorage } from '@angular/fire/storage';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router} from '@angular/router';
 import { CustomValidators } from 'src/app/utils/validators';
 import { ProductsService } from './../../../core/services/products.service';
-
+import { finalize } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 //form builder ext de angular que sirve para crear rapi el form group(inyeccion)
 
 @Component({
@@ -13,10 +15,12 @@ import { ProductsService } from './../../../core/services/products.service';
 })
 export class FormProductComponent implements OnInit {
   form:any //FormGroup;
+  image$:Observable<any>;
   constructor(
     private formBuilder: FormBuilder, //inyeccion de dependencia
     private productsService:ProductsService,
     private router: Router,
+    private  angularFireStorage:AngularFireStorage
     ) {
     this.buildForm();//form se debe crear en el constructor
   }
@@ -51,6 +55,25 @@ export class FormProductComponent implements OnInit {
   get priceField(){
  return this.form.get('price')
   }
+//ANGULAR FIRE STORAGE PARA SUBIR ARCHIVOS
+  uploadFile(event){
+  const file = event.target.files[0]; //me recupera el file y me lo guarda en un array
+  const imageFile = 'imageFile'; //nombre como se va a guardar la imagen
+  const fileRef = this.angularFireStorage.ref(imageFile); // creo la carpeta
+  const task = this.angularFireStorage.upload(imageFile,file);//tarea que sube el archico en la dir definida
+  task.snapshotChanges()// el task es un observable, snap permite saber el estado de la carga
+  .pipe(
+    finalize(()=>{
+     this.image$= fileRef.getDownloadURL() //es un pipe que devuelve la url donde se guardo el archivo
+     this.image$.subscribe(url=>{
+     this.form.get('image').setValue(url)//settear la imagen en firebase
+    console.log(url)
+    });
+    })
+    )
+  .subscribe();//debo hacer subscribcion para que todo se procese
+  console.log(file)
 
+}
 
 }

@@ -19,17 +19,14 @@ const routes: Routes = [
       },
       {
         path: 'products',
-        canActivate: [AdminGuard],
         loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
       },
       {
         path: 'contact',
-        canActivate: [AdminGuard],
         loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
       },
       {
         path: 'demo',
-        canActivate: [AdminGuard],
         loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule)
       },
        {
@@ -40,10 +37,18 @@ const routes: Routes = [
   },
   {
     path:'admin',
+    // el modulo de admin si debe tener un guard para evitar que cualquiera entre
+        canActivate: [AdminGuard],//si existe un usuario admin registrado se activa el guar y lo deja pasar
         loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
-
   },
-
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+  },
   {
     path: '**',
     loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)

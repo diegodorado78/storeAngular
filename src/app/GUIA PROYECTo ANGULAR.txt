@@ -51,3 +51,17 @@ crear un objeto de tipo HttpClient:   constructor( private http: HttpClient ) {}
 getAllProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(`${environment.url_api}/products`);
   }
+36. instalar firebase
+ng add @angular/fire
+ 37. voy a environment  y copio la configuracion de  firebase
+38. voy a app.mudle  y agrego  la config de firebase(agrego los modulos)
+39. AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireStorageModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule
+40.. creo un servicio  para hacer el auth
+agrego esto a compiler options en ts.config.json
+    "allowSyntheticDefaultImports": true
+
+
