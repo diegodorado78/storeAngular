@@ -77,51 +77,76 @@ firebase deploy
 
 preguntas
 Si pongo un servicio en un SharedModule, ¿cuál es la consecuencia?
+no: Por cada módulo que importe el SharedModule se genera una nueva instancia
+no:por cada modulo que importe el SharedModulese genera una unica instancia
+se creará una instancia nueva del servicio por cada módulo que tenga nuestra aplicación.
 
 ¿Cuál es la forma correcta de crear un Observable para manejar valores y comunicarlos a través de un servicio?
+ new BehaviorSubject<Product[]>([]);
 
 ¿Cuál es la forma correcta de obtener el índice iterador en un ngFor en un template de Angular?
+<element *ngFor=“let item of items; index as i”></element>
 
 ¿Cuál es la directiva para manejar un caso por defecto en un ngSwtich?
 *ngSwitchDefault
 ¿Cúal es el comando para hacer un deploy a Firebase Hosting?
-
+firebase deploy
 Para crear una barra de navegación tipo side con Angular Material ¿Cuál es el comando para generarlo?
 ng generate @angular/material:nav <component-name>
+
 ¿Si quieres instalar una lib que tenga CSS dónde debes agregar sus archivos de estilos?
 En el archivo angular.json en el array de styles
+
 ¿Cuál es la directiva para mostrar activo un link de acuerdo a la ruta?
 <a routerlinkactive="active">My Link</a>
+
 ¿Cuál es la función de los inputs en los componentes?
 Su función es enviar datos desde un componente padre a un componente hijo.
 ¿Cuál es la forma de leer los cambios de un FormControl?
+field.valueChanges.subscribe()
 
 ¿Cuál es la forma de enlazar un template al componente por medio del decorador?
 @Component({ selector:'app-footer', templateUrl:'./footer.component.html', })
+
 ¿Cuál tipo de Typescript me permite definir solo la parte de un modelo?
 const product: Partial<Product>;
+
 ¿Cuál es la forma correcta de declarar un condicional en un template Angular?
 <element *ngIf="conditional"></element>
+
 Si quiero que un input[text] sea requerido y además tenga mínimo 10 caracteres, ¿cuál sería el array correcto?
-[0,[Validators.required,CustomValidators.isPriceValid]] //Validators.minLength(10)
+[Validators.minLength(10)]
+
 ¿Cuál es la manera correcta de tipar una solicitud GET?
 this.http.get<type>('url')
+
 ¿En qué orden correcto en que se ejecutan estos métodos según el ciclo de vida de un componente?
 1.constructor 2.ngOnInit 3.ngOnDestroy
+
 ¿Cuál es el comando para instalar y configurar de forma automatica Angular Material en una aplicación Angular?
 ng add @angular/material
+
 ¿Cuál es la ruta por defecto para controlar cuando una url no hace match?
 { path: '**', component: PageNotFoundComponent }
+
 ¿Cuál de estos pipes cumple con la función de mostrar un string al revés? ejemplo: {{ 'hola' | reverse }} // aloh
 transform(value: string): string { return value.split('').reverse().join(''); }
+
 ¿Cuál es el módulo que de debe importar en app.module para habilitar el uso de HttpClient?
 HttpClientModule
+
 ¿Cuál es la forma correcta del uso de async?
 {{ element$ | async }}
+
 ¿Cuál es la forma correcta de instalar Angular CLI?
 npm i -g @angular/cli
+
 ¿Cuál es la forma correcta de obtener los parámetros de una ruta?
 this.route.params.subscribe((params: Params) => { console.log(params); });
 
+¿Cuál es la forma correcta de generar una compilacion a producción para un ambiente el ambiente stag?
+ng build -c=stag
 
 >>>>>>> 1e24d3561d4d2ba379173d5dca623092a7962acb
+ sharedmodule debe ser importado
+ coremodule se comparte a traves de toda la app por una ref unica(de datos/servicios)

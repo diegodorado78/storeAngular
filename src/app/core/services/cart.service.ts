@@ -13,7 +13,7 @@ products:Product[]=[];
 private cart = new BehaviorSubject<Product[]>([]);
 //var publica tipo observable para ser preguntada por any
 //se puedan suscribir y consulta cambios en real time
-cart$ = this.cart.asObservable();//se comporta como observable
+cart$ = this.cart.asObservable();//var publica/puede ser preguntada por any comp si se suscriben)
   constructor() { }
   addCart(product:Product){
     //uso el spread operatos par aevitar usar push y evitar
