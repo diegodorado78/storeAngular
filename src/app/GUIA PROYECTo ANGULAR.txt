@@ -64,4 +64,11 @@ ng add @angular/fire
 agrego esto a compiler options en ts.config.json
     "allowSyntheticDefaultImports": true
 
-
+desplegar a firebase
+firebase init
+select hosting
+select project
+use as public directory dist/storeAngular
+rewrite NO
+ng build --prod
+firebase deploy
