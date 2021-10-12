@@ -32,7 +32,7 @@ export class ProductEditComponent implements OnInit {
          //  description:product.description
         //CUANDO EN EL FORM COINCIDE TODA LA INFO , PUEDO PASAR DIRECTAMENTE A product
         this.form.patchValue(product)
-        // }); //uso el patch value para insertar la info guardad en bd del pdto  en el form
+        // }); //uso el patch value para insertar la info ya guardad en bd del pdto  en el form
       })//me suscribo para obtener la respuesta
 
     })
